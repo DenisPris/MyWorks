@@ -11,10 +11,10 @@ public class AbsoluteMaxOfTwoNegative {
         System.out.println("Это рандомное число 2 " + mathRand2);
 
         if (Math.abs(mathRand) > Math.abs(mathRand2)) {
-            System.out.println(mathRand + " Its greatest number");
+            System.out.println(mathRand + " Its greatest number  by absolute value");
         }
         else {
-            System.out.println(mathRand2 + " Its greatest number");
+            System.out.println(mathRand2 + " Its greatest number  by absolute value");
         }
     }
 }
