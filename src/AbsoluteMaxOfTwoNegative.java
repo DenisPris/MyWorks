@@ -7,14 +7,19 @@ public class AbsoluteMaxOfTwoNegative {
         int min = -10;
         int mathRand = min + (int) (Math.random() * 20);
         int mathRand2 = min + (int) (Math.random() * 20);
-        System.out.println("Это рандомное число 1 " + mathRand);
-        System.out.println("Это рандомное число 2 " + mathRand2);
+        System.out.println("Мы это " + mathRand);
+        System.out.println(" сравниваем с этим " + mathRand2);
+        System.out.println(Math.max(mathRand, mathRand2));
 
+
+/*
         if (Math.abs(mathRand) > Math.abs(mathRand2)) {
             System.out.println(mathRand + " Its greatest number  by absolute value");
         }
         else {
             System.out.println(mathRand2 + " Its greatest number  by absolute value");
         }
+    }
+*/
     }
 }
