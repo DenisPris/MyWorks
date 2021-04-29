@@ -8,10 +8,6 @@ public class MaxOfTwoComparaisTwoNumEnteredByUser {
         System.out.println("Enter second number- ");
         int secondNum = sc.nextInt();
 
-        if (firstNum > secondNum) {
-            System.out.println("The first entered number " + firstNum + " is greater.");
-        } else {
-            System.out.println("The second entered number "+ secondNum + " is greater");
+        System.out.println(Math.max(firstNum, secondNum) + " highest number.");
         }
     }
-}
