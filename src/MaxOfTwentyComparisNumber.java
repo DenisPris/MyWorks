@@ -16,21 +16,28 @@ public class MaxOfTwentyComparisNumber {
         }
 
         System.out.println("valid input! Quantity of compared numbers " + number);
-            int[] mas = new int[number];
-            int max = Integer.MIN_VALUE;
+        int[] mas = new int[number];
+        int max = Integer.MIN_VALUE;
 
-            System.out.println("Enter the " + number + " numbers: ");
-            for (int i = 0; i < mas.length; i++) {
-                mas[i] = scanner.nextInt();
+
+        for (int i = 0; i < mas.length; i++) {
+            while (true) {
+                try {
+                    mas[i] = scanner.nextInt();
+                    break;
+                } catch (Exception e) {
+                    scanner.next();
+                    System.out.println("invalid input");
+                }
             }
-
+        }
         for (int ma : mas) {
             max = Math.max(ma, max);
         }
 
-            System.out.println("Max number " + max);
+        System.out.println("Max number " + max);
 
-        }
     }
+}
 
 
