@@ -2,30 +2,42 @@ import java.util.Scanner;
 
 public class MaxOfTwentyComparisNumber {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int number = 0;
 
-        Scanner s = new Scanner(System.in);
+        while (number > 20 || number < 1) {
+            System.out.println("Enter the quantity of numbers from one to twenty ");
+            try {
+                number = scanner.nextInt();
+            } catch (Exception e) {
+                scanner.next();
+                System.out.println("invalid input, try again.");
+            }
+        }
 
-        System.out.println("Enter the quantity of numbers ");
+        System.out.println("valid input! Quantity of compared numbers " + number);
+        int[] mas = new int[number];
+        int max = Integer.MIN_VALUE;
 
-        int a = s.nextInt();
 
-        int[] mas = new int[a];
-        int max = mas[0];
-
-        System.out.println("Enter the numbers in massive: ");
         for (int i = 0; i < mas.length; i++) {
-            mas[i] = s.nextInt();
+            while (true) {
+                try {
+                    mas[i] = scanner.nextInt();
+                    break;
+                } catch (Exception e) {
+                    scanner.next();
+                    System.out.println("invalid input");
+                }
+            }
+        }
+        for (int ma : mas) {
+            max = Math.max(ma, max);
         }
 
-        for (int i = 0; i < mas.length; i++) {
-            max = Math.max(mas[i], max);
+        System.out.println("Max number " + max);
 
-//           if (mas[i] > max)
-//               max = mas[i];
-        }
-
-            System.out.println("Max number " + max);
-//        System.out.println("Min number " + min);
-        }
     }
+}
+
 
