@@ -7,11 +7,12 @@
 //Числа в файле должны быть разделены пробелом.
 
 import java.io.*;
+import java.util.Random;
 import java.util.Scanner;
 
 public class GenerateToFileRandomNumber {
     public static final int MAX_QUANTITY_OF_NUMBERS = 2000;
-    public static final long MIN_NUMBER = 5_000_000_000L * -1;
+    public static final long MIN_NUMBER = 5_000_000_000L;
     public static final long MAX_NUMBER = 2_000_000_000_000L;
 
     public static void main(String[] args) throws IOException {
@@ -34,10 +35,13 @@ public class GenerateToFileRandomNumber {
 
         File myFile = new File("randomNumber.txt");
 
+        Random random = new Random();
 
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(myFile, true));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(myFile)); //,true
         for (int i = 0; i < quantityOfNumbers; i++) {
-            long mathRand = MIN_NUMBER + (long) (Math.random() * MAX_NUMBER);
+
+            long mathRand = ((long) (Math.random() * (MAX_NUMBER-MIN_NUMBER))+MIN_NUMBER) * (random.nextBoolean() ? -1 : 1);
+
             bufferedWriter.write(mathRand + "\n");
         }
 
