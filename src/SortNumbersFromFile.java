@@ -15,34 +15,20 @@ public class SortNumbersFromFile {
         String line = scanner.nextLine();
         String[] numbersString = line.split(" ");
 
-
-
         long[] numbers = new long[2000];
         int counter = 0;
-
-
 
         for (String number : numbersString) {
             numbers[counter++] = Long.parseLong(number);
         }
-
         Arrays.sort(numbers);
-        System.out.println(Arrays.toString(numbers));
 
         File fileSortedRandNum = new File("sortedNumbers.txt");
-        try {
-            PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(fileSortedRandNum)));
-        writer.println(Arrays.toString(numbers));
-            writer.flush();
-            writer.close();
-        } catch (IOException exception){
-            exception.printStackTrace();
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileSortedRandNum));
+        for (int i = 0; i < numbers.length; i++) {
+            bufferedWriter.write(numbers[i] + " ");
         }
         scanner.close();
-
-
-
-
 
 
     }
