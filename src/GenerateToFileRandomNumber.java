@@ -7,6 +7,8 @@
 //Числа в файле должны быть разделены пробелом.
 
 import java.io.*;
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -42,9 +44,8 @@ public class GenerateToFileRandomNumber {
 
             long mathRand = ((long) (Math.random() * (MAX_NUMBER-MIN_NUMBER))+MIN_NUMBER) * (random.nextBoolean() ? -1 : 1);
 
-            bufferedWriter.write(mathRand + "\n");
+            bufferedWriter.write(mathRand + " ");
         }
-
         bufferedWriter.flush();
         bufferedWriter.close();
 
